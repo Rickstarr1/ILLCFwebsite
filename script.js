@@ -64,7 +64,7 @@ function checkLogin() {
         "lizettgalan12@gmail.com"
     ];
 
-    const correctPassword = "123";
+    const correctPassword = "ILLCFscholarsPortal";
     const email = document.getElementById("emailInput").value.trim().toLowerCase();
     const password = document.getElementById("passwordInput").value;
     const screen = document.getElementById("passwordScreen");
