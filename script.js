@@ -61,7 +61,8 @@ function checkLogin() {
         "nietoeric1@gmail.com",
         "jarenas@illcfoundation.org",
         "alquiciraj@gmail.com",
-        "lizettgalan12@gmail.com"
+        "lizettgalan12@gmail.com",
+        "Gilbertocolin13@gmail.com"
     ];
 
     const correctPassword = "ILLCFscholarsPortal";
