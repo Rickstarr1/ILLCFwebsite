@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLCF Committee</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <!-- Combined Navigation -->
+    <div class="nav-tab">
+        <img src="ILLCFLogo.png" alt="ILLCF Logo" class="nav-logo">
+        <nav>
+                    <!-- Mobile Menu Button (hidden on desktop) -->
+            <button class="mobile-menu-toggle">☰</button>
+            
+            <ul class="nav-list">
+                <li><a href="https://www.illcfoundation.org">Home</a></li>
+                <li class="with-dropdown">
+                    <a href="#">Who we are<span class="dropdown-v"></span></a>
+                    <div class="dropdown-bubble">
+                        <a href="https://www.illcfoundation.org/about-us">Board</a>
+                        <a href="https://www.illcfoundation.org/team">Team</a>
+                    </div>
+                </li>
+                <li class="with-dropdown">
+                    <a href="#">What we do<span class="dropdown-v"></span></a>
+                    <div class="dropdown-bubble">
+                        <a href="https://www.illcfoundation.org/history">History</a>
+                        <a href="https://www.illcfoundation.org/next-generation-leadership">Next Generation</a>
+                        <a href="https://www.illcfoundation.org/board-leadership-development">Board Pláticas</a>
+                        <a href="https://www.illcfoundation.org/rapid-response-program">Rapid Response Program</a>
+                        <a href="https://www.illcfoundation.org/public-policy">Public Policy</a>
+                    </div>
+                </li>
+                <li><a href="https://www.illcfoundation.org/contact">Contact</a></li>
+                <li><a href="https://www.illcfoundation.org/events">Events</a></li>
+                <li class="scholarship-item">
+                    <a href="https://www.illcfoundation.org/scholarship-program" class="scholarship-btn">
+                        <span class="arrow">→</span>
+                        <span class="divider"></span>
+                        <div class="text-container">
+                            <span class="line1">APPLY FOR THE SOY EL FUTURO!</span>
+                            <span class="line2">SCHOLARSHIP</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Password Screen -->
+    <div class="password-screen" id="passwordScreen">
+        <div class="password-container">
+            <div class="password-title">ILLCF Secure Portal</div>
+            <input type="email" id="emailInput" placeholder="Email" required>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button onclick="checkLogin()">Submit</button>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="search-container">
+        <select id="universityFilter">
+            <option value="">All Universities</option>
+            <!-- Options will be added dynamically -->
+        </select>
+        
+        <select id="majorFilter">
+            <option value="">All Majors</option>
+            <!-- Options will be added dynamically -->
+        </select>
+        
+        <select id="yearFilter">
+            <option value="">All Years</option>
+            <!-- Options will be added dynamically -->
+        </select>
+        
+        <!-- Add this new degree filter -->
+        <select id="degreeFilter">
+            <option value="">All Degrees</option>
+            <option value="BS">Bachelor's (BS)</option>
+            <option value="MS">Master's (MS)</option>
+            <option value="PhD">Doctorate (PhD)</option>
+            <option value="JD">Juris Doctor (JD)</option>
+            <option value="MBA">Master's of Business Administration (MBA)</option>
+        </select>
+        
+        <button onclick="filterMembers()">Filter</button>
+        <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+    <p class="no-results" id="noResults">No members match your filters.</p>
+
+    <!-- Original Content (Hidden until password is entered) -->
+    <div class="content" id="content">
+        <h1>Team</h1>
+
+<!-- Team Section -->
+<div class="members-row">
+    <div class="grid-item" onclick="openModal('Juan Carlos Arenas', 'A University', 'Computer Science', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF Next Gen Program Coordinator', 'qwe', 'JCA.png')">
+        <img src="JCA.png" alt="Juan Carlos Arenas">
+    </div>
+    <div class="grid-item" onclick="openModal('Elizabeth Gutierrez', 'B University', 'Computer Science', 'BS(20), MS,(22)', 'Stanford ILLCF@gmail.com', 'ILLCF Deputy Director', 'https://www.linkedin.com/in/elizabeth-gutierrez-059080176/', 'EG.jpg')">
+        <img src="EG.jpg" alt="Elizabeth Gutierrez">
+    </div>
+    <div class="grid-item" onclick="openModal('Oswaldo Alvarez', 'University of Wisconsin Madison', 'Political Science', 'BS(06), MS(12)', 'Stanford ILLCF@gmail.com', 'ILLCF Executive Director', 'https://www.linkedin.com/in/oswaldo-alvarez-725a70221/', 'OA.jpg')">
+        <img src="OA.jpg" alt="Oswaldo Alvarez">
+    </div>
+    <div class="grid-item" onclick="openModal('Maggie Olmos', 'D University', 'Computer Science', '', 'Stanford ILLCF@gmail.com', 'ILLCF Illini Public Policy Fellow', '', 'MO.jpg')">
+        <img src="MO.jpg" alt="Maggie Olmos">
+    </div>
+    <div class="grid-item" onclick="openModal('Marissa Leal', 'University of Illinois Chicago', 'Criminology', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF Policy Advisor', 'https://www.linkedin.com/in/marissa-leal-395963252/', 'ML.jpg')">
+        <img src="ML.jpg" alt="Marissa Leal">
+    </div>
+</div>
+
+<!-- Board Section -->
+<h2>Board</h2>
+<div class="members-row">
+    <div class="grid-item" onclick="openModal('Jaime Andrade Jr.', 'DePaul University', 'Accounting', 'BS(14), MS(21)', 'Stanford ILLCF@gmail.com', '40th District Representative', 'https://www.linkedin.com/in/jaime-m-andrade-jr-48975412/', 'RJAjr.jpg')">
+        <img src="RJAjr.jpg" alt="Jaime Andrade Jr.">
+    </div>
+    <div class="grid-item" onclick="openModal('Omar Aquino', 'Loyola University Chicago', 'N/a', 'N/a', 'Stanford ILLCF@gmail.com', '2nd District Representative', 'https://www.linkedin.com/in/senator-omar-aquino/', 'ROA.jpg')">
+        <img src="ROA.jpg" alt="Omar Aquino">
+    </div>
+    <div class="grid-item" onclick="openModal('Dagmara Avelar', 'University of Illinois Chicago', 'Urban Planning', 'BS(10), MS(25)', 'Stanford ILLCF@gmail.com', '85th District Representative', 'https://www.linkedin.com/in/dagmaralopez/', 'RDA.jpg')">
+        <img src="RDA.jpg" alt="Dagmara Avelar">
+    </div>
+    <div class="grid-item" onclick="openModal('Cristina Castro', 'Northern Illinois University', 'Marketing', 'BS(01), MBA(09)', 'Stanford ILLCF@gmail.com', '22nd District Senator', 'https://www.linkedin.com/in/cristinacastro/', 'RCC.jpg')">
+        <img src="RCC.jpg" alt="Cristina Castro">
+    </div>
+    <div class="grid-item" onclick="openModal('Fred Crespo', 'Loyola University Chicago', 'N/a', 'BS(80)', 'Stanford ILLCF@gmail.com', '44th District Representative', 'https://www.linkedin.com/in/fred-crespo-7b14847/', 'RFC.jpg')">
+        <img src="RFC.jpg" alt="Fred Crespo">
+    </div>
+    <div class="grid-item" onclick="openModal('Eva-Dina Delgado', 'DePaul University', 'Law', 'BS(99), JD(03)', 'Stanford ILLCF@gmail.com', '3rd District Representative', 'https://www.linkedin.com/in/eva-dina-delgado-a64b594/', 'REDD.jpg')">
+        <img src="REDD.jpg" alt="Eva-Dina Delgado">
+    </div>
+    <div class="grid-item" onclick="openModal('Edgar González', 'Harvard University', 'Government', 'BS(19)', 'Stanford ILLCF@gmail.com', '23rd District Representative', 'https://www.linkedin.com/in/edgar-gonzalez-jr/', 'REG.jpg')">
+        <img src="REG.jpg" alt="Edgar González">
+    </div>
+    <div class="grid-item" onclick="openModal('Angelica Guerrero-Cuellar', 'Roosevelt University', 'International Relations', 'BS(05)', 'Stanford ILLCF@gmail.com', '22nd District Representative', 'https://www.linkedin.com/in/angelica-guerrero-chicago/', 'RAGC.jpg')">
+        <img src="RAGC.jpg" alt="Angelica Guerrero-Cuellar">
+    </div>
+    <div class="grid-item" onclick="openModal('Graciela Guzmán', 'Grinell College', 'Anthropology', 'BS(11)', 'Stanford ILLCF@gmail.com', '20th District Senator', 'https://www.linkedin.com/in/guzmangraciela/', 'RGG.jpg')">
+        <img src="RGG.jpg" alt="Graciela Guzmán">
+    </div>
+    <div class="grid-item" onclick="openModal('Barbara Hernandez', 'Aurora University', 'Public Administration', 'BS(14), MS(21)', 'Stanford ILLCF@gmail.com', '50th District Representative', 'https://www.linkedin.com/in/barbarahernandez1/', 'RBH.jpg')">
+        <img src="RBH.jpg" alt="Barbara Hernandez">
+    </div>
+    <div class="grid-item" onclick="openModal('Lisa Hernandez', 'Harvard University', 'Computer Science', '', 'Stanford ILLCF@gmail.com', '2nd District Representative', '', 'RLH.jpg')">
+        <img src="RLH.jpg" alt="Lisa Hernandez">
+    </div>
+    <div class="grid-item" onclick="openModal('Norma Hernandez', 'University of Illinois Chicago', 'Urban Planning', 'BS(17), MS(19)', 'Stanford ILLCF@gmail.com', '77th District Representative', 'https://www.linkedin.com/in/norma-hernandez-897473127/', 'RNH.jpg')">
+        <img src="RNH.jpg" alt="Norma Hernandez">
+    </div>
+    <div class="grid-item" onclick="openModal('Lilian Jimenez', 'DePaul University', 'Public Interest Law', 'BS(00), JD(11)', 'Stanford ILLCF@gmail.com', '4th District Representative', 'https://www.linkedin.com/in/lilianjimenez/', 'RLJ.jpg')">
+        <img src="RLJ.jpg" alt="Lilian Jimenez">
+    </div>
+    <div class="grid-item" onclick="openModal('Javier Loera Cervantes', 'International Academy of Design & Technology-Chicago', 'Design & Visual Communications', 'BS(04)', 'Stanford ILLCF@gmail.com', '1st District Senator', 'https://www.linkedin.com/in/javier-loera-cervantes-9959a7173/', 'RJLC.jpg')">
+        <img src="RJLC.jpg" alt="Javier Loera Cervantes">
+    </div>
+    <div class="grid-item" onclick="openModal('Aarón M. Ortíz', 'Harvard University', 'Computer Science', '', 'Stanford ILLCF@gmail.com', '1st District Representative', '', 'RAO.jpg')">
+        <img src="RAO.jpg" alt="Aarón M. Ortíz">
+    </div>
+    <div class="grid-item" onclick="openModal('Karina Villa', 'Aurora University', 'Social Work', 'BS(99), MS(03)', 'Stanford ILLCF@gmail.com', '25th District Senator', 'https://www.linkedin.com/in/karinavillamsw/', 'RKV.jpg')">
+        <img src="RKV.jpg" alt="Karina Villa">
+    </div>
+    <div class="grid-item" onclick="openModal('Celina Villanueva', 'University of Illinois Urbana-Champaign', 'Individual Plan of Study', 'BS(08)', 'Stanford ILLCF@gmail.com', '12th District Senator', 'https://www.linkedin.com/in/celinavillanueva/', 'RCV.jpg')">
+        <img src="RCV.jpg" alt="Celina Villanueva">
+    </div>
+</div>
+
+<!-- 2024 Scholarship Recipients -->
+<h2>2024 Scholarship Recipients</h2>
+<div class="members-row">
+    <div class="grid-item" onclick="openModal('Eric Nieto Gonzalez', 'University of Illinois Urbana-Champaign', 'Electrical Engineering', 'BS(25), MS(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/ericnietogonzalez/', 'ENG.jpg')">
+        <img src="ENG.jpg" alt="Eric Nieto Gonzalez">
+    </div>
+    <div class="grid-item" onclick="openModal('Jair Alvarez', 'University of Illinois Chicago', 'Political Science', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/jair-alvarez/', 'JA.jpg')">
+        <img src="JA.jpg" alt="Jair Alvarez">
+    </div>
+    <div class="grid-item" onclick="openModal('Corazon Rivera', 'George Washington University', 'Political Science & Government', 'BS(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/corazonrivera/', 'CR.jpg')">
+        <img src="CR.jpg" alt="Corazon Rivera">
+    </div>
+    <div class="grid-item" onclick="openModal('Kayla Montes', 'University of Missouri-Columbia', 'Economics', 'BS(27), MBA(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/kayla-montes/', 'KM.jpg')">
+        <img src="KM.jpg" alt="Kayla Montes">
+    </div>
+    <div class="grid-item" onclick="openModal('Carlos Morales', 'Northwestern University', 'Public Administration', 'BS(24), MS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/mrcarlosmorales/', 'CM.jpg')">
+        <img src="CM.jpg" alt="Carlos Morales">
+    </div>
+    <div class="grid-item" onclick="openModal('Jay Campos', 'University of Illinois Chicago', 'Criminology, Law, & Justice', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/jay-campos-9a5915244/', 'JC.jpg')">
+        <img src="JC.jpg" alt="Jay Campos">
+    </div>
+    <div class="grid-item" onclick="openModal('Alondra Duenas', 'Northern Illinois University', 'Communication', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/alondra-duenas-avila-/', 'AD.jpg')">
+        <img src="AD.jpg" alt="Alondra Duenas">
+    </div>
+    <div class="grid-item" onclick="openModal('Veronica Gebbia', 'University of Illinois Chicago', 'Chemical Engineering', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/verogebs/', 'VG.jpg')">
+        <img src="VG.jpg" alt="Veronica Gebbia">
+    </div>
+    <div class="grid-item" onclick="openModal('Madeline Silva', 'Morton College', 'Aerospace Engineering', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'MS.jpg')">
+        <img src="MS.jpg" alt="Madeline Silva">
+    </div>
+    <div class="grid-item" onclick="openModal('Diana Mendoza-Vazquez', 'Dominican University', 'Neurobiology', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'DMV.jpg')">
+        <img src="DMV.jpg" alt="Diana Mendoza-Vazquez">
+    </div>
+    <div class="grid-item" onclick="openModal('Axel Hernandez', 'Loyola University Chicago', 'Finance & Management', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/axeldhdz/', 'AH.jpg')">
+        <img src="AH.jpg" alt="Axel Hernandez">
+    </div>
+    <div class="grid-item" onclick="openModal('Edgar Vilchez', 'Cornell University', 'Government', 'BS(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/edgar-jared-v/', 'EV.jpg')">
+        <img src="EV.jpg" alt="Edgar Vilchez">
+    </div>
+    <div class="grid-item" onclick="openModal('Evelin Solis', 'Indiana University Indianapolis', 'Forensic & Investigative Sciences', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/evelinsolis/', 'ES.jpg')">
+        <img src="ES.jpg" alt="Evelin Solis">
+    </div>
+    <div class="grid-item" onclick="openModal('Arianna Perez', 'Illinois Institute of Technology', 'Computer & Cybersecurity Engineering', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/arianna-perez-6a45b4316/', 'AP.png')">
+        <img src="AP.png" alt="Arianna Perez">
+    </div>
+    <div class="grid-item" onclick="openModal('Laura Padilla', 'Loyola University Chicago', 'Law', 'BS(18), JD(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/laura-padilla-1a05a3123/', 'LP.jpg')">
+        <img src="LP.jpg" alt="Laura Padilla">
+    </div>
+    <div class="grid-item" onclick="openModal('Ambar Medrano Jimenez', 'University of Illinois Urbana-Champaign', 'Supply Chain Management', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/ambarmedrano/', 'AMJ.jpg')">
+        <img src="AMJ.jpg" alt="Ambar Medrano Jimenez">
+    </div>
+    <div class="grid-item" onclick="openModal('Ireri Miranda-Gonzalez', 'Aurora University', 'Psychology', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/ireri-miranda-gonzalez-096323303/', 'IMG.jpg')">
+        <img src="IMG.jpg" alt="Ireri Miranda-Gonzalez">
+    </div>
+    <div class="grid-item" onclick="openModal('Ruben Mariquez', 'University of Illinois Urbana-Champaign', 'Financial Planning', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/ruben-manriquez-4737412a6/', 'RM.jpg')">
+        <img src="RM.jpg" alt="Ruben Mariquez">
+    </div>
+    <div class="grid-item" onclick="openModal('Virnaliz Jimenez', 'University of Illinois Urbana-Champaign', 'Human Development & Family Studies', 'BS(16), MS(21), PhD(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/virnaliz-jimenez-b78075126/', 'VJ.jpg')">
+        <img src="VJ.jpg" alt="Virnaliz Jimenez">
+    </div>
+    <div class="grid-item" onclick="openModal('Lizbeth Ramos', 'Eastern Illinois University', 'Exercise Science Pre-PT', 'BS(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/lizbeth-ramos-a16597312/', 'LR.png')">
+        <img src="LR.png" alt="Lizbeth Ramos">
+    </div>
+</div>
+
+<!-- 2023 Scholarship Recipients -->
+<h2>2023 Scholarship Recipients</h2>
+<div class="members-row">
+    <div class="grid-item" onclick="openModal('Deniss Lujan Guerrero', 'University of Illinois Chicago', 'Nursing', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'DLG.jpg')">
+        <img src="DLG.jpg" alt="Deniss Lujan Guerrero">
+    </div>
+    <div class="grid-item" onclick="openModal('Elizabeth Ramirez', 'University of Illinois Chicago', 'Finance', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/elizabeth-ramirez-6bb04b186/', 'ER.jpg')">
+        <img src="ER.jpg" alt="Elizabeth Ramirez">
+    </div>
+    <div class="grid-item" onclick="openModal('Rodolfo Juarez', 'University of Illinois Urbana-Champaign', 'Computer Science', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/rudyjuarezovallos/', 'RJ.jpg')">
+        <img src="RJ.jpg" alt="Rodolfo Juarez">
+    </div>
+    <div class="grid-item" onclick="openModal('Christian Malagon-Bravo', 'Lewis Univeristy', 'Management', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/christian-malagon-bravo-52b507280/', 'CMM.jpg')">
+        <img src="CMM.jpg" alt="Christian Malagon-Bravo">
+    </div>
+    <div class="grid-item" onclick="openModal('Alejandra Sotelo', 'Loyola University Chicago', 'Political Science & Criminal Justice', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/alejandra-sotelo-7883b5235/', 'AS.jpg')">
+        <img src="AS.jpg" alt="Alejandra Sotelo">
+    </div>
+    <div class="grid-item" onclick="openModal('Serafin Patino', 'Carleton College', 'Computer Science', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/serafin-patino/', 'SRP.JPEG')">
+        <img src="SRP.JPEG" alt="Serafin Patino">
+    </div>
+    <div class="grid-item" onclick="openModal('Victoria Esparza', 'University of California Berkeley', 'Juris Doctor', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'VE.jpg')">
+        <img src="VE.jpg" alt="Victoria Esparza">
+    </div>
+    <div class="grid-item" onclick="openModal('Stephanie Pedroza', 'University of Illinois Urbana-Champaign', 'Finance and Data Science', 'BS(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/stephaniepedroza/', 'SP.jpg')">
+        <img src="SP.jpg" alt="Stephanie Pedroza">
+    </div>
+    <div class="grid-item" onclick="openModal('Daniela Pule', 'University of Illinois Urbana-Champaign', 'Kinesiology', 'BS(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/daniela-pule-975861296/', 'DP.png')">
+        <img src="DP.png" alt="Daniela Pule">
+    </div>
+    <div class="grid-item" onclick="openModal('Mónica Ruiz', 'University of Chicago', 'Latino Studies, Sociology, & Spanish', 'BS(26)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/monica-ruiz-house-5497b3229/', 'MR.jpg')">
+        <img src="MR.jpg" alt="Mónica Ruiz">
+    </div>
+    <div class="grid-item" onclick="openModal('Juan Hernandez', 'VanderCook College of Music', 'Music Education & Performance', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'JH.jpg')">
+        <img src="JH.jpg" alt="Juan Hernandez">
+    </div>
+    <div class="grid-item" onclick="openModal('Maria Borerro', 'Northeastern Illinois University', 'Masters Degree in Higher Education', 'BS(14), MS(23)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/borrerita/details/education/', 'MB.jpg')">
+        <img src="MB.jpg" alt="Maria Borerro">
+    </div>
+    <div class="grid-item" onclick="openModal('Arantxa Sanchez', 'Medical College of Wisconsin', 'Doctor of Medicine (MD)', 'BS(23), MD(27)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/sanchez-arantxa/', 'ASL.jpg')">
+        <img src="ASL.jpg" alt="Arantxa Sanchez">
+    </div>
+    <div class="grid-item" onclick="openModal('Kathy Colin', 'University of Richmond', 'Chemistry', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/kathyrcolin/', 'KC.jpg')">
+        <img src="KC.jpg" alt="Kathy Colin">
+    </div>
+    <div class="grid-item" onclick="openModal('Pamela Fullerton', 'Governors State University', 'Counselor Education and Supervision', 'BS(04), MS(18), PhD(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/dr-pamela-fullerton-phd-lcpc/', 'PF.jpg')">
+        <img src="PF.jpg" alt="Pamela Fullerton">
+    </div>
+    <div class="grid-item" onclick="openModal('Jonathan Montoya', 'Southern Illinois University Carbondale', 'Nursing', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'JMM.jpg')">
+        <img src="JMM.jpg" alt="Jonathan Montoya">
+    </div>
+    <div class="grid-item" onclick="openModal('Olivia Marquiis', 'Brandeis University', 'Biology', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'OM.jpg')">
+        <img src="OM.jpg" alt="Olivia Marquiis">
+    </div>
+    <div class="grid-item" onclick="openModal('Leticia Diaz Leon', 'University of Illinois Chicago', 'Epidemiology', 'BS(19), MBA(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/leticiadiazleon/', 'LDL.jpg')">
+        <img src="LDL.jpg" alt="Leticia Diaz Leon">
+    </div>
+    <div class="grid-item" onclick="openModal('Jennifer Torres', 'University of Illinois Chicago', 'English', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'JT.jpg')">
+        <img src="JT.jpg" alt="Jennifer Torres">
+    </div>
+    <div class="grid-item" onclick="openModal('Ada Velazquez', 'William Rainey Harper College', 'Nursing', 'BS(22)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/ada-velazquez-2a5b30234/', 'AV.jpg')">
+        <img src="AV.jpg" alt="Ada Velazquez">
+    </div>
+</div>
+
+<!-- 2022 Scholarship Recipients -->
+<h2>2022 Scholarship Recipients</h2>
+<div class="members-row">
+    <div class="grid-item" onclick="openModal('Anely Lopez', 'Saint Xavier University', 'Electrical Engineering', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/anely-lopez-069998mval/', 'AL.png')">
+        <img src="AL.png" alt="Anely Lopez">
+    </div>
+    <div class="grid-item" onclick="openModal('Taylor Lane', 'University of Illinois Chicago', 'Political Science', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'TL.jpg')">
+        <img src="TL.jpg" alt="Taylor Lane">
+    </div>
+    <div class="grid-item" onclick="openModal('Moises Arreola-Malagon', 'Lake Forest College', 'Political Science & Government', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/moises-arreola-malagon-8a44a7257/', 'MA.jpg')">
+        <img src="MA.jpg" alt="Moises Arreola-Malagon">
+    </div>
+    <div class="grid-item" onclick="openModal('Jessica Molinar', 'Governors State University', 'Accounting', 'BS(22), MS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/jessica-m-38947a300/','JM.png')">
+        <img src="JM.png" alt="Jessica Molinar">
+    </div>
+    <div class="grid-item" onclick="openModal('Jasmine Reyes', 'Illinois Wesleyan University', 'Public Administration', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'JR.jpg')">
+        <img src="JR.jpg" alt="Jasmine Reyes">
+    </div>
+    <div class="grid-item" onclick="openModal('Diana Camarillo', 'University of Massachusetts Amherst', 'Criminology, Law, & Justice', 'BS(22), MBA(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/dianacamarillo24/', 'DC.jpg')">
+        <img src="DC.jpg" alt="Diana Camarillo">
+    </div>
+    <div class="grid-item" onclick="openModal('Cindy Gabriela Duran', 'Northern Illinois University', 'Communication', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'CD.jpg')">
+        <img src="CD.jpg" alt="Cindy Gabriela Duran">
+    </div>
+    <div class="grid-item" onclick="openModal('Margarita Sanchez', 'University of Illinois Urbana-Champaign', 'Political Science', 'BS(23)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/margarita-sanchez-805271203/', 'MSS.jpg')">
+        <img src="MSS.jpg" alt="Margarita Sanchez">
+    </div>
+    <div class="grid-item" onclick="openModal('Alexandra Alcantar', 'Northern Illinois University', 'Political Science', 'BS(24), JD(27) ', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/alexandra-alcantar/', 'AA.jpg')">
+        <img src="AA.jpg" alt="Alexandra Alcantar">
+    </div>
+    <div class="grid-item" onclick="openModal('Yudany Lizbeth Diaz', 'University of Illinois Urbana-Champaign', 'History', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/yudanydiaz/', 'YD.JPG')">
+        <img src="YD.JPG" alt="Yudany Lizbeth Diaz">
+    </div>
+    <div class="grid-item" onclick="openModal('Nahara Abigail Escalante Bustillo', 'University of Illinois Chicago', 'Computer Science', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'NB.jpg')">
+        <img src="NB.jpg" alt="Nahara Abigail Escalante Bustillo">
+    </div>
+    <div class="grid-item" onclick="openModal('Nicole Mendez-Villarrubia', 'North Central College', 'Communication', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/nicole-mendez-villarrubia/', 'NM.JPG')">
+        <img src="NM.JPG" alt="Nicole Mendez-Villarrubia">
+    </div>
+    <div class="grid-item" onclick="openModal('Dianiela Morelos', 'University of Illinois Urbana-Champaign', 'Forensic & Investigative Sciences', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'DM.jpg')">
+        <img src="DM.jpg" alt="Dianiela Morelos">
+    </div>
+    <div class="grid-item" onclick="openModal('Julian Cronin', 'Brown University', 'International & Public Affairs', 'BS(25)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/julian-cronin-909b84190/', 'JCH.PNG')">
+        <img src="JCH.PNG" alt="Julian Cronin">
+    </div>
+    <div class="grid-item" onclick="openModal('Saul Manon-Arellano', 'Northeastern Illinois University', 'Juris Doctor', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'SMA.jpg')">
+        <img src="SMA.jpg" alt="Saul Manon-Arellano">
+    </div>
+    <div class="grid-item" onclick="openModal('Naomi Esquivel', 'University of Illinois Urbana-Champaign', 'Vetenary Medicine', 'BS(21)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/naomi-esquivel-19992006/', 'NE.jpg')">
+        <img src="NE.jpg" alt="Naomi Esquivel">
+    </div>
+    <div class="grid-item" onclick="openModal('Jazmine J. Saavedra', 'University of Illinois Urbana-Champaign', 'Psychology', 'BS(21), MS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/jazmine-saavedra-88119427b/', 'JS.jpg')">
+        <img src="JS.jpg" alt="Jazmine J. Saavedra">
+    </div>
+    <div class="grid-item" onclick="openModal('Karina Rodriguez', 'Loyola University Chicago', 'Sociology', 'BS(22)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/karina-rodriguez-276b19242/', 'KR.jpg')">
+        <img src="KR.jpg" alt="Karina Rodriguez">
+    </div>
+    <div class="grid-item" onclick="openModal('Enrique Garcia', 'Ursinus College', 'Human Development & Family Studies', '', 'Stanford ILLCF@gmail.com', 'ILLCF job', '', 'EG.png')">
+        <img src="EG.png" alt="Enrique Garcia">
+    </div>
+    <div class="grid-item" onclick="openModal('Cindy Laureano Martinez', 'National Louis University', 'Kinesiology', 'BS(24)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/cindylaureanomartinez/', 'CLM.png')">
+        <img src="CLM.png" alt="Cindy Laureano Martinez">
+    </div>
+</div>
+
+<!-- 2011 Scholarship Recipients -->
+<h2>2011 Scholarship Recipients</h2>
+<div class="members-row">
+    <div class="grid-item" onclick="openModal('Jesus Alquicira', 'University of Illinois Chicago', 'Civil Engineering', 'BS(13), MS(18)', 'Stanford ILLCF@gmail.com', 'ILLCF job', 'https://www.linkedin.com/in/alquiciraj/', 'JA.jpeg')">
+        <img src="JA.jpeg" alt="Jesus Alquicira">
+    </div>
+</div>
+
+
+
+    <!-- Footer Section - Beige Bar -->
+    <footer>
+        <div class="footer-content">
+            <!-- Left Column -->
+            <div>
+                <h3>ILLCF</h3>
+                <ul>
+                    <li><a href="https://www.illcfoundation.org">HOME</a></li>
+                    <li><a href="https://www.illcfoundation.org/history">WHAT WE DO</a></li>
+                    <li><a href="https://www.illcfoundation.org/contact">CONTACT</a></li>
+                </ul>
+            </div>
+            
+            <!-- Middle Column -->
+            <div>
+                <h3>PRESS</h3>
+                <ul>
+                    <li><a href="https://www.illcfoundation.org/about-us">ABOUT</a></li>
+                    <li><a href="https://www.illcfoundation.org/events">EVENTS</a></li>
+                </ul>
+            </div>
+            
+            <!-- Right Column (Address) -->
+            <div class="footer-address">
+                <p>320 S. CANAL STREET SUITE 3300</p>
+                <p>MAIL: INFO@ILLCFOUNDATION.ORG</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
