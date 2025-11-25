@@ -80,7 +80,7 @@ function getAllRecipientEmails() {
 function checkLogin() {
     const validEmails = getAllRecipientEmails(); // auto-generated list
 
-    const correctPassword = "123";
+    const correctPassword = "ILLCFscholarsPortal";
     const email = document.getElementById("emailInput").value.trim().toLowerCase();
     const password = document.getElementById("passwordInput").value;
     const screen = document.getElementById("passwordScreen");
