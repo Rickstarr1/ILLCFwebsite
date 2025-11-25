@@ -46,8 +46,6 @@ function openModal(name, school, major, degree = '', email = '', job = '', linke
             <p><strong>University:</strong> ${school}</p>
             <p><strong>Major:</strong> ${major}</p>
             ${degree ? `<p><strong>Highest Degree:</strong> ${degree}</p>` : ''}
-            ${email ? `<p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>` : ''}
-            ${job ? `<p><strong>Job:</strong> ${job}</p>` : ''}
             ${linkedin ? `<p><strong>LinkedIn:</strong> <a href="${linkedin}" target="_blank" class="linkedin-link">View Profile</a></p>` : ''}
         </div>
     `;
@@ -55,17 +53,34 @@ function openModal(name, school, major, degree = '', email = '', job = '', linke
     modal.style.display = "flex";
 }
 
-// Password screen
-function checkLogin() {
-    const validEmails = [
-        "nietoeric1@gmail.com",
-        "jarenas@illcfoundation.org",
-        "alquiciraj@gmail.com",
-        "lizettgalan12@gmail.com",
-        "Gilbertocolin13@gmail.com"
-    ];
+// Automatically extract all emails from your grid items
+function getAllRecipientEmails() {
+    const items = document.querySelectorAll(".grid-item");
+    const emails = new Set();
 
-    const correctPassword = "ILLCFscholarsPortal";
+    items.forEach(item => {
+        const onclickValue = item.getAttribute("onclick");
+
+        if (onclickValue) {
+            // Extract all arguments of openModal(...) safely
+            const args = onclickValue
+                .match(/openModal\((.*)\)/)[1]        // get inside parentheses
+                .split(/,(?=(?:[^']*'[^']*')*[^']*$)/) // split respecting quotes
+                .map(a => a.trim().replace(/^'|'$/g, "")); // clean quotes
+
+            const email = args[4]; // email is argument #4
+            if (email) emails.add(email.toLowerCase());
+        }
+    });
+
+    return Array.from(emails);
+}
+
+
+function checkLogin() {
+    const validEmails = getAllRecipientEmails(); // auto-generated list
+
+    const correctPassword = "123";
     const email = document.getElementById("emailInput").value.trim().toLowerCase();
     const password = document.getElementById("passwordInput").value;
     const screen = document.getElementById("passwordScreen");
@@ -86,6 +101,7 @@ function checkLogin() {
     screen.style.display = "none";
     content.style.display = "block";
 }
+
 
 
 // Filters: setup and populate
