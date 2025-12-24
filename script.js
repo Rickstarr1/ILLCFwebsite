@@ -76,7 +76,7 @@ function getAllRecipientEmails() {
     return Array.from(emails);
 }
 
-
+/*
 function checkLogin() {
     const validEmails = getAllRecipientEmails(); // auto-generated list
 
@@ -101,7 +101,7 @@ function checkLogin() {
     screen.style.display = "none";
     content.style.display = "block";
 }
-
+*/
 
 
 // Filters: setup and populate
