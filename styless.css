@@ -415,7 +415,7 @@ body {
 
 /* Original Content (Hidden until password is entered) */
 .content {
-    display: none; /* Hidden until password is entered */
+    display: block; /* Hidden until password is entered */
     /* Reduced padding-top as spacing is now handled by the search-container and body */
     padding-top: 20px; 
 }
